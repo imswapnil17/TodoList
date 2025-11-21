@@ -57,6 +57,8 @@ export const deleteController = async (req,res)=>{
         else{
             await todoModel.findByIdAndDelete(searched_Id)
         }
+        res.status(200).json({success:'true',message:"Data Deleted"})
+        
     }
     catch{
         res.status(500).json({success:"false",message:"Internal Server Error"})
